@@ -1,0 +1,120 @@
+import random 
+from time import sleep
+import os
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+jogador = menu = 0
+
+while True:
+  print('-='*9,'Jo-Ken-Po','-='*9)
+  menu = int(input('[ 1 ] Jogar\n[ 2 ] Regras\n[ 3 ] Sair \nSua escolha: '))
+  print('-='*9,'Jo-Ken-Po','-='*9)
+  limpar_tela()
+  if menu == 1:
+    while True:
+      jogador = int(input('Esolha sua jogada\n [ 0 ] Pedra\n [ 1 ] Papel\n [ 2 ] Tesoura \n [ 3 ] Lagarto \n [ 4 ] Spock\n [ 5 ] Sair \nSua escolha: '))
+      limpar_tela()
+      if jogador == 5:
+        print('Obrigado por jogar\nAté a próxima')
+        sleep(2)
+        limpar_tela()
+        break
+        
+      lista = ('Pedra','Papel','Tesoura','Lagarto','Spock')
+      cpu = random.randint(0, 4)
+      print('-='*11)
+      print('Jogador Jogou {}'.format(lista[jogador]))
+      print('CPU Jogou {}'.format(lista[cpu]))
+      print('-='*11)
+      if cpu == 0:
+        if jogador == 0:
+          print('!!!EMPATE!!!')
+        elif jogador == 1:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 2:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 3:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 4:
+          print('!!!JOGADOR VENCEU!!!')
+      elif cpu == 1:
+        if jogador == 0:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 1:
+          print('!!!EMPATE!!!')
+        elif jogador == 2:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 3:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 4:
+          print('!!!CPU VENCEU!!!')
+      elif cpu == 2:
+        if jogador == 0:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 1:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 2:
+          print('!!!EMPATE!!!')
+        elif jogador == 3:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 4:
+          print('!!!JOGADOR VENCEU!!!')
+      elif cpu == 3:
+        if jogador == 0:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 1:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 2:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 3:
+          print('!!!EMPATE!!!')
+        elif jogador == 4:
+          print('!!!CPU VENCEU!!!')
+      elif cpu == 4:
+        if jogador == 0:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 1:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 2:
+          print('!!!JOGADOR VENCEU!!!')
+        elif jogador == 3:
+          print('!!!CPU VENCEU!!!')
+        elif jogador == 4:
+          print('!!!EMPATE!!!')
+      x = input('Deseha jogar novamente S/N ').lower()
+      if x == 'n':
+        print('Obrigado por jogar \nAte a proxima')
+        sleep(2)
+        limpar_tela()
+        break  
+  if menu == 2:
+    print('~'*9,'Regras','~'*9)
+    print('''Tesoura corta papel
+Papel cobre pedra
+Pedra esmaga lagarto
+Lagarto envenena Spock
+Spock esmaga tesoura
+Tesoura decapita lagarto
+Lagarto come papel
+Papel refuta Spock
+Spock vaporiza pedra
+E como sempre 
+Pedra amassa tesoura''')
+    print('~'*25)
+    x = input('Para sair aperte (X)').lower()
+    if x == 'x':
+      limpar_tela()
+  if menu == 3:
+    print('Saindo')
+    print('.')
+    sleep(1)
+    print('.')
+    sleep(1)
+    print('.')
+    sleep(1)
+    print('Obrigado por jogar\nAte a proxima')
+    sleep(1)
+    break
+
+
+
